@@ -281,15 +281,17 @@ const Landing = () => {
         </div>
         <div
           className="flex flex-row space-x-4 items-start px-4 py-4"
-          style={{ flexDirection: "row-reverse" }}
+          style={{ flexDirection: "row-reverse", gap: "20px" }}
         >
           <div
             className="leftClass w-full"
             style={{
               height: "85vh",
               width: `25%`,
-              border: "2px solid black",
-              borderRadius: "5px",
+              border: "1px solid #f5f5f5",
+              borderRadius: "8px",
+              boxShadow: "0px 0px 20px 0px rgba(0,0,0,0.2)",
+              padding: "12px 6px",
             }}
           >
             <LeftBar
@@ -303,7 +305,15 @@ const Landing = () => {
               value={value}
             />
           </div>
-          <div className="flex flex-col w-full h-full justify-start items-end">
+          <div
+            className="flex flex-col w-full h-full justify-start items-end"
+            style={{
+              border: "1px solid #f5f5f5",
+              borderRadius: "8px",
+              boxShadow: "0px 0px 20px 0px rgba(0,0,0,0.2)",
+              padding: "12px 6px",
+            }}
+          >
             <CodeEditorWindow
               code={code}
               onChange={onChange}
@@ -325,7 +335,7 @@ const Landing = () => {
                 onClick={handleCompile}
                 disabled={!code}
                 className={classnames(
-                  "mt-4 border-2 border-black z-10 rounded-md  px-4 py-2 hover:shadow transition duration-200 bg-white flex-shrink-0",
+                  "mt-4 border-2  z-10 rounded-md  px-4 py-2 hover:shadow transition duration-200 bg-white flex-shrink-0",
                   !code ? "opacity-50" : ""
                 )}
               >

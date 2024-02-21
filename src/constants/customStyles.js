@@ -10,9 +10,7 @@ export const customStyles = {
     lineHeight: "1.75rem",
     backgroundColor: "#FFFFFF",
     cursor: "pointer",
-    border: "2px solid #000000",
     ":hover": {
-      border: "2px solid #000000",
       boxShadow: "none",
     },
   }),
@@ -36,7 +34,6 @@ export const customStyles = {
       ...styles,
       backgroundColor: "#fff",
       maxWidth: "14rem",
-      border: "2px solid #000000",
       borderRadius: "5px",
     };
   },
