@@ -13,6 +13,7 @@ import CustomInput from "./CustomInput";
 import OutputDetails from "./OutputDetails";
 import LanguagesDropdown from "./LanguagesDropdown";
 import LeftBar from "./LeftBar";
+import { Link } from "react-router-dom";
 
 const javascriptDefault = `
 //select Any file to start coding 😊
@@ -331,16 +332,27 @@ const Landing = () => {
                 customInput={customInput}
                 setCustomInput={setCustomInput}
               />
-              <button
-                onClick={handleCompile}
-                disabled={!code}
-                className={classnames(
-                  "mt-4 border-2  z-10 rounded-md  px-4 py-2 hover:shadow transition duration-200 bg-white flex-shrink-0",
-                  !code ? "opacity-50" : ""
-                )}
-              >
-                {processing ? "Processing..." : "Compile and Execute"}
-              </button>
+              <div className="flex">
+                <Link
+                  className={classnames(
+                    "mt-4 border-2  z-10 rounded-md  px-4 py-2 hover:shadow transition duration-200 bg-white flex-shrink-0",
+                    !code ? "opacity-50" : ""
+                  )}
+                  to={"/debug"}
+                >
+                  Debug
+                </Link>
+                <button
+                  onClick={handleCompile}
+                  disabled={!code}
+                  className={classnames(
+                    "mt-4 border-2  z-10 rounded-md  px-4 py-2 hover:shadow transition duration-200 bg-white flex-shrink-0",
+                    !code ? "opacity-50" : ""
+                  )}
+                >
+                  {processing ? "Processing..." : "Compile and Execute"}
+                </button>
+              </div>
             </div>
             {outputDetails && <OutputDetails outputDetails={outputDetails} />}
           </div>
