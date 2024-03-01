@@ -340,7 +340,7 @@ const Landing = () => {
                   )}
                   to={"/debug"}
                 >
-                  Debug
+                  {"Debug"}
                 </Link>
                 <button
                   onClick={handleCompile}
